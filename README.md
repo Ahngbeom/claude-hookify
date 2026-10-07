@@ -17,7 +17,6 @@ claude plugin install claude-hookify@ahngbeom-claude-config
 | `prefer-frontend-engineer` | file | Frontend component files (.tsx, .vue, .jsx) | frontend-engineer |
 | `prefer-commit-commands` | bash | `git commit/push` commands | /commit, /commit-push-pr |
 | `prefer-test-automation` | file | Test files (.test.ts, .spec.js) | test-automation-engineer |
-| `prefer-markdown-writer` | file | Markdown document files | markdown-document-writer |
 | `prefer-jira-retrospective` | user_prompt | Retrospective keywords | jira-retrospective |
 | `prefer-commit-retrospective` | user_prompt | Commit retrospective keywords | commit-retrospective |
 
