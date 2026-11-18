@@ -12,11 +12,7 @@ claude plugin install claude-hookify@ahngbeom-claude-config
 
 | Hook | Event | Trigger | Recommended Agent |
 |------|-------|---------|-------------------|
-| `prefer-backend-agent` | file | API endpoint files (controller, route, service) | backend-api-architect, nodejs-backend, spring-boot-backend |
-| `prefer-database-expert` | file | DB schema/migration files | database-expert |
-| `prefer-frontend-engineer` | file | Frontend component files (.tsx, .vue, .jsx) | frontend-engineer |
 | `prefer-commit-commands` | bash | `git commit/push` commands | /commit, /commit-push-pr |
-| `prefer-test-automation` | file | Test files (.test.ts, .spec.js) | test-automation-engineer |
 | `prefer-jira-retrospective` | user_prompt | Retrospective keywords | jira-retrospective |
 | `prefer-commit-retrospective` | user_prompt | Commit retrospective keywords | commit-retrospective |
 
@@ -49,12 +45,10 @@ Markdown body with recommendation message...
 
 ## Requirements
 
-이 플러그인은 독립적으로 동작하지만, 권장하는 에이전트를 사용하려면 해당 에이전트 플러그인이 설치되어 있어야 합니다:
+이 플러그인은 독립적으로 동작하지만, 권장하는 에이전트와 커맨드를 사용하려면 해당 플러그인이 설치되어 있어야 합니다:
 
-- `backend-agents` - Backend API 관련 훅
-- `frontend-agents` - Frontend 관련 훅
-- `devops-agents` - Git workflow 관련 훅
-- `productivity-agents` - Testing, documentation, retrospective 관련 훅
+- `commit-commands` (공식) - Git workflow 관련 훅
+- `productivity-agents` - retrospective 관련 훅
 
 ## License
 
