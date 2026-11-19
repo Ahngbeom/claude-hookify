@@ -1,14 +1,17 @@
 ---
 name: prefer-jira-retrospective
 enabled: true
-event: user_prompt
-pattern: (회고록|회고|retrospective|주간\s*정리|월간\s*정리|[Jj]ira\s*이슈\s*정리|업무\s*정리|이번\s*주\s*정리)
+event: prompt
+conditions:
+  - field: user_prompt
+    operator: regex_match
+    pattern: (회고록|회고|retrospective|주간\s*정리|월간\s*정리|[Jj]ira\s*이슈\s*정리|업무\s*정리|이번\s*주\s*정리)
 action: suggest
 ---
 
 # Jira 회고록 자동화 도구 사용을 권장합니다
 
-**jira-retrospective** 에이전트 또는 `/retrospective` 명령어를 사용하면 더 효율적입니다!
+**jira-retrospective** 에이전트 또는 `/jira-retro` 명령어를 사용하면 더 효율적입니다!
 
 ## 기능
 
@@ -21,7 +24,7 @@ action: suggest
 
 ### 명령어 사용
 ```
-/retrospective
+/jira-retro
 ```
 
 ### 자연어 요청
