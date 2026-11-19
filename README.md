@@ -13,8 +13,8 @@ claude plugin install claude-hookify@ahngbeom-claude-config
 | Hook | Event | Trigger | Recommended Agent |
 |------|-------|---------|-------------------|
 | `prefer-commit-commands` | bash | `git commit/push` commands | /commit, /commit-push-pr |
-| `prefer-jira-retrospective` | user_prompt | Retrospective keywords | jira-retrospective |
-| `prefer-commit-retrospective` | user_prompt | Commit retrospective keywords | commit-retrospective |
+| `prefer-jira-retrospective` | prompt | Retrospective keywords | jira-retrospective |
+| `prefer-commit-retrospective` | prompt | Commit retrospective keywords | commit-retrospective |
 
 ## How It Works
 
@@ -22,7 +22,7 @@ Hookify 파일은 Claude Code hook 시스템을 활용합니다:
 
 - **`file` event hooks**: 특정 파일 패턴에 매칭되는 파일을 편집할 때 경고 메시지 표시
 - **`bash` event hooks**: 특정 bash 명령어 패턴이 감지되면 경고 메시지 표시
-- **`user_prompt` event hooks**: 사용자 입력에 특정 키워드가 감지되면 에이전트 사용 제안
+- **`prompt` event hooks**: 사용자 입력에 특정 키워드가 감지되면 에이전트 사용 제안
 
 각 훅은 `enabled: true/false`로 개별 활성화/비활성화 가능합니다.
 
@@ -32,8 +32,8 @@ Hookify 파일은 Claude Code hook 시스템을 활용합니다:
 ---
 name: prefer-example-agent
 enabled: true
-event: file          # file | bash | user_prompt
-conditions:          # file event 전용
+event: file          # file | bash | prompt
+conditions:          # prompt event는 field: user_prompt
   - field: file_path
     operator: regex_match
     pattern: \.example\.ts$

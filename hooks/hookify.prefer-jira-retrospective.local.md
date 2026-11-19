@@ -1,8 +1,11 @@
 ---
 name: prefer-jira-retrospective
 enabled: true
-event: user_prompt
-pattern: (회고록|회고|retrospective|주간\s*정리|월간\s*정리|[Jj]ira\s*이슈\s*정리|업무\s*정리|이번\s*주\s*정리)
+event: prompt
+conditions:
+  - field: user_prompt
+    operator: regex_match
+    pattern: (회고록|회고|retrospective|주간\s*정리|월간\s*정리|[Jj]ira\s*이슈\s*정리|업무\s*정리|이번\s*주\s*정리)
 action: suggest
 ---
 
